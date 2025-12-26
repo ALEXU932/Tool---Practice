@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="admin.css">
+    <title>Admin Dashboard - Gihon e-com</title>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="site-header">
+            <div class="header-container">
+                <div class="logo-part">
+                    <button class="sidebar-toggle" title="Toggle Sidebar">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <img src="/Assets/Assets/logo-img.png" alt="logo image">
+                    <a href="#"><b>Gihon <i>e-com</i></b></a>
+                </div>
+
+                <div class="header-controls">
+                    <div class="header-actions">
+                        <button class="header-btn chat-btn" title="Chat">
+                            <i class="fa-regular fa-comment-dots"></i>
+                            <span class="notification-badge">3</span>
+                        </button>
+                        <button class="header-btn profile" title="Profile">
+                            <i class="fa-solid fa-user"></i>
+                        </button>
+                        <button class="header-btn brightness" title="Toggle Theme">
+                            <i class="fa-regular fa-sun"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Sidebar -->
+        <aside class="asideBar" id="sidebar">
+            <div class="sidebar-header">
+                <h3><i class="fa-solid fa-gauge-high"></i> Dashboard</h3>
+            </div>
+            
+            <nav class="sidebar-menu">
+                <button class="adminTask active" id="dashboard">
+                    <i class="fa-solid fa-grip"></i><span>Dashboard</span>
+                </button>
+                <button class="adminTask" id="orders">
+                    <i class="fa-solid fa-address-book"></i><span>Orders</span>
+                </button>
+                <button class="adminTask" id="carts">
+                    <i class="fa-solid fa-cart-plus"></i><span>Carts</span>
+                </button>
+                <button class="adminTask" id="addproduct">
+                    <i class="fa-solid fa-square-plus"></i><span>Add Products</span>
+                </button>
+                <button class="adminTask" id="customers">
+                    <i class="fa-solid fa-users"></i><span>Customers</span>
+                </button>
+                <button class="adminTask" id="removeproduct">
+                    <i class="fa-solid fa-trash-can"></i><span>Remove Products</span>
+                </button>
+                <button class="adminTask" id="transaction">
+                    <i class="fa-solid fa-tent-arrow-left-right"></i><span>Transaction Log</span>
+                </button>
+                <button class="adminTask" id="settings">
+                    <i class="fa-solid fa-gear"></i><span>Settings</span>
+                </button>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <div class="user-avatar">A</div>
+                    <div class="user-info">
+                        <h4>Admin User</h4>
+                        <p>Administrator</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content" id="mainContent">
+            <div class="mainContainer" id="mainContainer">
+                <!-- Dynamic content will be loaded here -->
+            </div>
+        </main>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2024 Gihon e-com. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>
