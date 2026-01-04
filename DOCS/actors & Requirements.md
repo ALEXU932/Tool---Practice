@@ -8,7 +8,25 @@ Facilitating online buying and selling of products,
 Providing AI-driven product recommendations and search,
 Supporting secure payments and order tracking,
 Offering administrative control, analytics, and system monitoring.
-# actors of the dydtem
+# actors of the system
+2. Identified Actors
+Actors are entities that interact with the system.
+   1. Primary Actors
+Customer:
+Browses products, searches items, places orders, and tracks deliveries
+Receives AI-based recommendations and notifications
+Seller:
+Manages product listings, inventory, and product performance analytics
+Administrator:
+Manages users, products, orders, roles, system settings, and analytics
+  2. Secondary / External Actors
+   AI Operator / System Manager:
+   Monitors AI models, system health, and performance
+Payment Gateway:
+   Processes secure online payments (e.g., Stripe, PayPal, Chapa, Telle Birr)
+
+Notification Service
+  Sends emails and SMS notifications (order confirmation, alerts)
 3. Functional Requirements (5 User Stories / Use Cases)
 User Story 1 – User Registration & Login
 
