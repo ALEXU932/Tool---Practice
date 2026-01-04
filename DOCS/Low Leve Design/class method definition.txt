@@ -1,0 +1,145 @@
+Class Diagram – Method Definitions
+
+(Derived from SRS Section 3.2 System Requirements)
+
+1. User Class
+Description
+
+Represents a generic system user. Parent class for Customer, Seller, Administrator, and AI Operator.
+
+Attributes
+
+Methods
+Method	Description
+register()	Validates user input and creates a new user account
+login()	Authenticates user credentials
+logout()	Terminates user session
+updateProfile()	Updates user personal information
+changePassword()	Changes user password securely
+isAccountLocked()	Checks whether the account is locked
+2. Customer Class (extends User)
+Description
+
+Represents end users who browse products and place orders.
+
+Methods
+Method	Description
+browseProducts()	Retrieves product listings
+searchProduct(query)	Searches products using keyword or AI
+addToCart(product, quantity)	Adds product to shopping cart
+removeFromCart(product)	Removes product from cart
+checkout()	Initiates checkout process
+viewOrders()	Displays past orders
+receiveRecommendation()	Receives AI-based recommendations
+3. Seller Class (extends User)
+Description
+
+Represents users who manage products and inventory.
+
+Methods
+Method	Description
+addProduct(product)	Adds new product to catalog
+updateProduct(product)	Updates product details
+deleteProduct(productId)	Removes product from catalog
+updateInventory(productId, quantity)	Adjusts stock level
+viewProductAnalytics()	Views product performance data
+4. Administrator Class (extends User)
+Description
+
+Manages system-wide operations and users.
+
+Methods
+Method	Description
+manageUsers()	Creates, updates, or disables users
+assignRoles(user, role)	Assigns roles to users
+manageProducts()	Oversees all products
+manageOrders()	Processes and updates orders
+viewSystemAnalytics()	Views dashboards and reports
+viewAuditLogs()	Reviews system logs
+5. AI_Operator Class (extends User)
+Description
+
+Maintains AI models and monitors system intelligence.
+
+Methods
+Method	Description
+monitorModels()	Monitors AI model health
+retrainModels()	Retrains AI models
+evaluateAccuracy()	Evaluates model performance
+adjustAIParameters()	Modifies AI configuration
+6. Product Class
+Description
+
+Represents items available for sale.
+
+Methods 
+Method	Description
+getProductDetails()	Returns product information
+updateProductInfo()	Updates product data
+checkAvailability()	Checks stock availability
+7. ShoppingCart Class
+Description
+
+Manages customer-selected products before checkout.
+
+Methods
+Method	Description
+addItem(product, quantity)	Adds item to cart
+removeItem(product)	Removes item
+updateQuantity(product, quantity)	Modifies quantity
+calculateTotal()	Computes total price
+clearCart()	Empties cart
+8. Order Class
+Description
+
+Represents a completed purchase transaction.
+
+
+Methods
+Method	Description
+createOrder(cart)	Creates order from cart
+updateOrderStatus(status)	Updates order status
+getOrderDetails()	Retrieves order info
+generateConfirmation()	Generates order confirmation
+9. Payment Class
+Description
+
+Handles third-party payment processing.
+
+Methods
+Method	Description
+initiatePayment(amount)	Sends payment request
+verifyPayment()	Confirms payment success
+handlePaymentFailure()	Handles failed transactions
+10. Notification Class
+Description
+
+Handles system notifications via email/SMS.
+deliveryStatus
+
+Methods
+Method	Description
+sendEmail(user, message)	Sends email notification
+sendSMS(user, message)	Sends SMS notification
+retryFailedNotification()	Retries failed delivery
+11. RecommendationEngine Class
+Description
+Provides AI-powered product recommendations.
+recommendationData
+Methods
+Method	Description
+generateRecommendations(user)	Produces personalized suggestions
+explainRecommendation(product)	Explains recommendation logic
+fallbackRecommendation()	Provides generic recommendations
+12. AnalyticsService Class
+Description
+
+Generates business insights and reports.
+
+analyticsData
+
+Methods
+Method	Description
+generateSalesReport()	Produces sales analytics
+analyzeUserBehavior()	Analyzes interaction data
+generateDashboard()	Displays analytics dashboard

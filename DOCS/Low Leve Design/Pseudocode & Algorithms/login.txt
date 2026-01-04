@@ -1,0 +1,38 @@
+# User Authentication Algorithm
+
+Associated Requirement: SR-2 (Secure User Authentication)
+
+Description:
+The system shall authenticate users by validating credentials and enforcing account security policies.
+
+Algorithm: User Login Processing
+BEGIN UserLogin
+    INPUT email, password
+
+    FETCH userRecord WHERE email = inputEmail
+
+    IF userRecord does not exist THEN
+        DISPLAY "Invalid email or password"
+        EXIT
+    ENDIF
+
+    IF accountLocked(userRecord) THEN
+        DISPLAY "Account temporarily locked. Try again later"
+        EXIT
+    ENDIF
+
+    IF bcryptCompare(password, userRecord.passwordHash) = FALSE THEN
+        INCREMENT failedLoginCount
+        IF failedLoginCount >= 5 THEN
+            LOCK account for 30 minutes
+        ENDIF
+        DISPLAY "Invalid email or password"
+        EXIT
+    ENDIF
+
+    RESET failedLoginCount
+    GRANT access based on role
+END
+
+Post-Condition:
+User is either authenticated and authorized or access is denied with an appropriate error message.

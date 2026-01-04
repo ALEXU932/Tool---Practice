@@ -1,0 +1,37 @@
+# AI-Based Recommendation Algorithm
+
+Associated Requirements: SR-11, SR-12 (Recommendation Generation & Explanation)
+
+Description:
+The system shall generate personalized recommendations using AI models based on user behavior.
+
+Product Search and Retrieval Algorithm
+
+Associated Requirement: SR-5 (Search Engine Processing)
+
+Description:
+The system shall support both keyword-based and AI-assisted natural language search queries.
+
+Algorithm: Product Search
+BEGIN ProductSearch
+    INPUT searchQuery
+
+    IF searchQuery is empty THEN
+        DISPLAY "Please enter a search term"
+        EXIT
+    ENDIF
+
+    IF searchQuery is keyword-based THEN
+        results ← keywordSearch(searchQuery)
+    ELSE
+        results ← AI_NLP_Search(searchQuery)
+    ENDIF
+
+    IF results is empty THEN
+        DISPLAY "No matching products found"
+    ELSE
+        DISPLAY results
+    ENDIF
+END
+Post-Condition:
+Search results or appropriate feedback are displayed to the user.

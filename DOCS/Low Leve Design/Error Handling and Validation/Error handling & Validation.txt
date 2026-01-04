@@ -1,0 +1,84 @@
+# Error Handling and Validation Requirements
+
+This section specifies the validation rules and error-handling mechanisms required to ensure system robustness, usability, and security.
+
+1 Input Validation Requirements
+
+The system shall validate all user inputs before processing.
+
+| Input Type      | Validation Rule                  |
+| --------------- | -------------------------------- |
+| Email           | RFC 5322 compliant               |
+| Password        | Minimum 8 characters, mixed case |
+| Required Fields | Must not be null                 |
+| Numeric Values  | Must be positive                 |
+| Language Input  | English or Amharic only          |
+
+2 Error Handling Requirements by Module
+a) User Registration
+
+Duplicate email addresses shall be rejected.
+
+Weak passwords shall trigger validation messages.
+
+Missing fields shall be highlighted.
+
+b) Authentication
+
+Invalid credentials shall result in access denial.
+
+Excessive login failures shall lock the account.
+
+Unauthorized access attempts shall be logged.
+
+c) Product Search
+
+No matching products shall display an informational message.
+
+Invalid queries shall prompt correction.
+
+d) Shopping Cart
+
+Out-of-stock products shall not be added.
+
+Invalid quantities shall be rejected.
+
+e) Checkout and Payment
+
+Incomplete transactions shall be blocked.
+
+Payment failures shall notify users and log errors.
+
+f) Order Management
+
+Order confirmation failures shall trigger retries.
+
+Empty order history shall display an informative message.
+
+g) Notifications
+
+Failed message delivery shall be logged and retried.
+
+h) AI Recommendation
+
+Insufficient data shall result in generic recommendations.
+
+Missing explanations shall notify users accordingly.
+
+3 General Error Handling Principles
+
+The system shall adhere to the following principles:
+
+Error messages shall be clear and user-friendly.
+
+Technical details shall not be exposed to end users.
+
+Recoverable errors shall be retried automatically.
+
+Critical failures shall be logged for auditing.
+
+Security-related errors shall not reveal sensitive information.
+
+# Verification and Traceability
+
+Each algorithm and error-handling mechanism defined in this section is directly traceable to the corresponding system requirements in Section 3.2 and validated through test cases defined in the Requirements Traceability Matrix (RTM).
