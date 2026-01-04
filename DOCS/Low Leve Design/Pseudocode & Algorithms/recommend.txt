@@ -1,0 +1,24 @@
+# AI-Based Recommendation Algorithm
+
+Associated Requirements: SR-11, SR-12 (Recommendation Generation & Explanation)
+
+Description:
+The system shall generate personalized recommendations using AI models based on user behavior.
+
+Algorithm: Recommendation Generation
+BEGIN RecommendationEngine
+    INPUT userBehaviorData
+
+    IF userBehaviorData is insufficient THEN
+        DISPLAY genericRecommendations
+        EXIT
+    ENDIF
+
+    recommendations ← AI_Model(userBehaviorData)
+
+    FOR each recommendation
+        GENERATE explanation
+    ENDFOR
+
+    DISPLAY recommendations with explanations
+END

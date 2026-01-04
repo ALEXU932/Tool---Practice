@@ -1,0 +1,33 @@
+# Checkout and Payment Processing Algorithm
+
+Associated Requirement: SR-7 (Checkout Processing)
+
+Description:
+The system shall process checkout requests and securely integrate with third-party payment gateways.
+
+Algorithm: Checkout Process
+BEGIN CheckoutProcess
+    INPUT cartItems, paymentDetails
+
+    IF cartItems is empty THEN
+        DISPLAY "Cart is empty"
+        EXIT
+    ENDIF
+
+    CALCULATE totalPrice including tax and discounts
+
+    REDIRECT to paymentGateway(paymentDetails)
+
+    IF paymentStatus = FAILED THEN
+        DISPLAY "Payment unsuccessful. Try again."
+        EXIT
+    ENDIF
+
+    SAVE orderDetails
+    GENERATE orderConfirmation
+    SEND notification (email/SMS)
+
+    DISPLAY "Order placed successfully"
+END
+Post-Condition:
+Order is either successfully completed or safely rolled back.

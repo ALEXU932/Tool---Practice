@@ -1,0 +1,38 @@
+# User Registration Algorithm:
+Associated Requirement: SR-1 (User Registration Processing)
+
+Description:
+The system shall process user registration requests by validating input data, enforcing uniqueness constraints, and securely storing user credentials.
+
+Algorithm: User Registration Processing:
+BEGIN UserRegistration
+    INPUT userEmail, userPassword, userDetails
+
+    IF userEmail is empty OR userPassword is empty THEN
+        DISPLAY "Required fields missing"
+        EXIT
+    ENDIF
+
+    IF emailFormat(userEmail) is invalid THEN
+        DISPLAY "Invalid email format"
+        EXIT
+    ENDIF
+
+    IF passwordStrength(userPassword) < requiredStandard THEN
+        DISPLAY "Password does not meet strength requirements"
+        EXIT
+    ENDIF
+
+    IF userEmail exists in database THEN
+        DISPLAY "Email already registered"
+        EXIT
+    ENDIF
+
+    hashedPassword ← bcrypt(userPassword)
+    SAVE userEmail, hashedPassword, userDetails TO database
+
+    DISPLAY "Registration successful"
+END
+
+Post-Condition:
+A new user account is successfully created and stored in the system database.

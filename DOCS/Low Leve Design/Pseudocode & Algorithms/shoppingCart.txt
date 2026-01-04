@@ -1,0 +1,23 @@
+# Shopping Cart Management Algorithm
+
+Associated Requirement: SR-6 (Shopping Cart Management)
+
+Description:
+The system shall manage the addition, modification, and removal of products in the shopping cart.
+
+Algorithm: Add Item to Cart
+BEGIN AddToCart
+    INPUT productID, quantity
+
+    FETCH productStock FROM inventory
+
+    IF productStock < quantity THEN
+        DISPLAY "Product out of stock"
+        EXIT
+    ENDIF
+
+    ADD productID and quantity TO cart
+    UPDATE cartTotal
+
+    DISPLAY "Item added to cart"
+END
